@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #5</title>
+</head>
+<body>
+
+    <h3>Crear una función donde la persona ingrese su salario mensual, si el salario es mayor a $500.00 <br>
+        se le deberá descontar el 5% de su salario, mostrar un mensaje del nombre de la persona y su salario total.</h3>
+    <div>
+        <table>
+    <form name="salarios">
+        <tr>
+            <td><label for="">Digite su nombre</label></td>
+        <br>
+            <td><input type="text" id="nombre"></td>
+       </tr>
+        <br>
+        <tr>
+            <td><label for="">Ingrese su salario</label></td>
+            <td><input type="text" id="salario"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Calcular" onclick="salario_mensual()"></td>
+        </tr>
+    </form>
+   </table> 
+</div>
+    <script>
+        function salario_mensual(){
+             var nombre, salario;
+             nombre = document.getElementById("nombre");
+             salario = document.getElementById("salario");
+            if(salario.value>500.00){
+                let total_salario,descuento
+                total_salario= salario.value-(salario.value*0.05);
+                descuento= salario.value*0.05
+                alert("El salario total de " + nombre.value+" es de: "+" $"+ total_salario+" descontando el 5% que son "+" $"+descuento);
+            }else{
+                alert("El salario de "+nombre.value+" es de: "+" $"+salario.value);
+            }
+        }
+    </script>
+</body>
+</html>
